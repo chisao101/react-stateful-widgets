@@ -52,10 +52,10 @@ const [spinnerOn, setSpinnerOn] = useState(true)
     <div className='widget-spinner container'>
       <h2>Spinner</h2>
       {
-        {spinnerOn} && <div id='spinner' className='spinner'>--+--</div> /* STEP 2 */
+        spinnerOn && <div id='spinner' className='spinner'>--+--</div> /* STEP 2 */
       }
       <button id='toggleSpinner' onClick={toggleSpinner}>
-        Hide Spinner {/* STEP 3 */}
+        {!spinnerOn ? 'Show' : 'Hide'} Spinner {/* STEP 3 */}
       </button>
     </div>
   );
@@ -86,3 +86,4 @@ const [spinnerOn, setSpinnerOn] = useState(true)
 //       }
 //       <button id='toggleSpinner' onClick={toggleSpinner}>
 //         {/* this below checks if spinner is on if so will put show into the button otherwise will display hide */}
+// commit and push again
