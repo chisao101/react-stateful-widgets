@@ -37,24 +37,53 @@ STEP 4:
   Do you remember the operator we use to do "not"?
 */
 
-import React from 'react'; /* STEP 0 */
+import React, { useState } from 'react'; /* STEP 0 */
 
 export default function Spinner() {
-/* STEP 1 */
+const [spinnerOn, setSpinnerOn] = useState(true)
 
   const toggleSpinner = () => {
   /* STEP 4 */
+  setSpinnerOn(!spinnerOn)
+  // let displayToggle = document.querySelector('.spinner')
   };
 
   return (
     <div className='widget-spinner container'>
       <h2>Spinner</h2>
       {
-        true && <div id='spinner' className='spinner'>--+--</div> /* STEP 2 */
+        spinnerOn && <div id='spinner' className='spinner'>--+--</div> /* STEP 2 */
       }
       <button id='toggleSpinner' onClick={toggleSpinner}>
-        Hide Spinner {/* STEP 3 */}
+        {!spinnerOn ? 'Show' : 'Hide'} Spinner {/* STEP 3 */}
       </button>
     </div>
   );
 }
+
+
+
+// import React, { useState } from 'react';
+
+// export default function Spinner() {
+//   const [spinnerOn, setSpinnerOn] = useState(false)
+//   // when called below  will set spinner to opposite with the !spinnerOn then 
+//   // targets the spinner class and will check if off to set the display to 
+//   // none otherwise will display flex
+//   const toggleSpinner = () => {
+//   setSpinnerOn(!spinnerOn)
+//   let displayToggle = document.querySelector('.spinner')
+//   {(spinnerOn == false ? displayToggle.style.display = 'none' : displayToggle.style.display = 'flex')}
+  
+//   };
+// // below true was replaced with the spinnerOn which is a boolean of true or false
+// // and is changed in the above.
+//   return (
+//     <div className='widget-spinner container'>
+//       <h2>Spinner</h2>
+//       {
+//         {spinnerOn} && <div id='spinner' className='spinner'>--+--</div> /* STEP 2 */
+//       }
+//       <button id='toggleSpinner' onClick={toggleSpinner}>
+//         {/* this below checks if spinner is on if so will put show into the button otherwise will display hide */}
+// commit and push again
